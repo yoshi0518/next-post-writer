@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="ja">
-      <body className={cn('bg-background', notoSansJP.className)}>{children}</body>
+      <body className={cn('bg-background min-h-screen antialiased', notoSansJP.className)}>{children}</body>
     </html>
   );
 };
