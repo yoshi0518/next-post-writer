@@ -1,6 +1,7 @@
 import type { NavItem } from '@/types';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
+import { useLockBodyScroll } from '@uidotdev/usehooks';
 
 type Props = {
   items: NavItem[];
@@ -8,6 +9,8 @@ type Props = {
 };
 
 export const MobileNav: React.FC<Props> = ({ items }) => {
+  useLockBodyScroll();
+
   return (
     <div className="animate-in slide-in-from-bottom-80 fixed inset-0 top-16 z-50 p-6 shadow-md md:hidden">
       <div className="bg-popover text-popover-foreground grid gap-6 p-4 shadow-md">
