@@ -65,6 +65,7 @@ const eslintConfig = [
       'postcss.config.mjs',
       'tailwind.config.ts',
       'playwright.config.ts',
+      'contentlayer.config.ts',
       '**/manifest.ts',
       '.storybook/*',
       '**/*.stories.ts',

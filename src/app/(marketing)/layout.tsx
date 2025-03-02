@@ -1,11 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MainNav } from '@/components/main-nav';
+import { SiteFooter } from '@/components/site-footer';
 import { buttonVariants } from '@/components/ui/button';
 import { marketingConfig } from '@/config/marketing';
 import { cn } from '@/lib/utils';
 
 type MarketingLayoutProps = {
   children: React.ReactNode;
+};
+
+export const metadata: Metadata = {
+  title: 'Marketing',
 };
 
 const MarketingLayout: React.FC<MarketingLayoutProps> = ({ children }) => {
@@ -25,6 +31,7 @@ const MarketingLayout: React.FC<MarketingLayoutProps> = ({ children }) => {
         </div>
       </header>
       <main>{children}</main>
+      <SiteFooter />
     </>
   );
 };

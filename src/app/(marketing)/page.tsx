@@ -175,6 +175,25 @@ const Page: React.FC = () => {
           </p>
         </div>
       </section>
+
+      <section className="container mx-auto py-8 md:py-12 lg:py-24">
+        <div className="mx-auto flex max-w-[58rem] flex-col gap-4 text-center">
+          <h2 className="text-3xl font-extrabold md:text-6xl">Contact Me</h2>
+          <p className="text-muted-foreground sm:text-lg sm:leading-7">
+            もしもWebサービスが気に入った場合は下記XからDMでご連絡ください。
+            <br />
+            お仕事のご連絡をお待ちしております。
+          </p>
+          <Link
+            href={siteConfig.links.x}
+            className="underline underline-offset-4"
+            target="_blank"
+            rel="noreferrer"
+          >
+            お仕事はXまで
+          </Link>
+        </div>
+      </section>
     </>
   );
 };
