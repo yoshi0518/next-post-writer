@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -7,13 +8,34 @@ import { cn } from '@/lib/utils';
 import { allPosts } from 'contentlayer/generated';
 import { format } from 'date-fns';
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 const getPostFromSlug = async (slug: string) => {
   const post = allPosts.find((post) => post.slugAsParams === slug);
   return post;
 };
 
-type Props = {
-  params: Promise<{ slug: string }>;
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  const { slug } = await params;
+  const post = await getPostFromSlug(slug);
+
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: post.image ? [post.image] : undefined,
+    },
+    twitter: {
+      title: post.title,
+      description: post.description,
+    },
+  };
 };
 
 const Page: React.FC<Props> = async ({ params }) => {
