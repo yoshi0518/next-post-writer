@@ -1,6 +1,6 @@
 'use client';
 
-import type { NavItem } from '@/types';
+import type { NavItem } from 'types';
 import { useState } from 'react';
 import Link from 'next/link';
 import { MobileNav } from '@/components/mobile-nav';
