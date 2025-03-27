@@ -1,4 +1,5 @@
 // import Link from 'next/link';
+import { DashboardNav } from '@/components/dashboard-nav';
 import { MainNav } from '@/components/main-nav';
 import { SiteFooter } from '@/components/site-footer';
 import { dashboardConfig } from '@/config/dashboard';
@@ -12,7 +13,9 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
         </div>
       </header>
       <div className="container my-4 grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
-        <aside className="hidden w-[200px] flex-col md:flex">Sidebar</aside>
+        <aside className="hidden w-[200px] flex-col md:flex">
+          <DashboardNav items={dashboardConfig.sidebarNav} />
+        </aside>
         <main className="flex w-full flex-1 flex-col overflow-hidden">{children}</main>
       </div>
       <SiteFooter />
