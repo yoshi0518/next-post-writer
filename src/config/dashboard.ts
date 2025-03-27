@@ -16,17 +16,17 @@ export const dashboardConfig: DashboardConfig = {
     {
       title: '記事投稿',
       href: '/dashboard',
-      // icon: 'post',
+      icon: 'post',
     },
     {
       title: 'お支払い',
       href: '/dashboard/billing',
-      // icon: 'billing',
+      icon: 'billing',
     },
     {
       title: '設定',
       href: '/dashboard/settings',
-      // icon: 'settings',
+      icon: 'settings',
     },
   ],
 };
