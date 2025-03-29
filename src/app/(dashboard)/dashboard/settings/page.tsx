@@ -1,5 +1,13 @@
+import { DashboardShell } from '@/components/dashboard-shell';
+
 const Page: React.FC = () => {
-  return <div>Settings</div>;
+  return (
+    <DashboardShell>
+      <div>
+        <h1>Settings</h1>
+      </div>
+    </DashboardShell>
+  );
 };
 
 export default Page;
